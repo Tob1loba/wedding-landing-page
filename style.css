@@ -170,6 +170,7 @@ header {
 .wedding-details {
     padding: 120px 10px;
     background: #fffdf8;
+    text-align: center;
 }
 .details-container {
     max-width: 1100px;
@@ -181,16 +182,17 @@ header {
 }
 .details-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 60px;
 }
 .detail-card {
-    background: #ffffff;
-    padding: 45px 30px;
-    border-radius: 18px;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 35px rgba(0,0,0,.08);
+    transition: 3s;
 }
 .detail-card:hover {
     transform: translateY(-8px);
@@ -207,6 +209,10 @@ header {
     color: #6B6B6B;
     line-height: 1.8;
     font-size: 1rem;
+}
+.detail-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 .countdown {
     padding: 120px 10px;
@@ -395,11 +401,20 @@ header {
     cursor: pointer;
     transition: .3s ease;
     font-size: 1rem;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
 }
 .gift-button:hover {
     background: #C8917A;
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(216, 164, 143, .35);
+}
+.gift-arrow{
+    transition:transform .35s ease;
+}
+.gift-button.active .gift-arrow{
+    transform:rotate(180deg);
 }
 .faq {
     padding: 120px 10px;
@@ -461,39 +476,6 @@ footer p {
     margin: 10px 0;
     color: #CCCCCC;
     font-size: .95rem;
-}
-.wedding-details {
-    padding: 100px 10%;
-    text-align: center;
-}
-.details-grid {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 30px;
-    margin-top: 60px;
-}
-.detail-card {
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 35px rgba(0,0,0,.08);
-    transition: 3s;
-}
-.detail-card:hover {
-    transform: translateY(-8px);
-}
-.detail-icon {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-.detail-card h3 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-.detail-card p {
-    color: #666;
-    line-height: 1.8;
 }
 .hidden {
     opacity: 0;
@@ -749,4 +731,81 @@ footer p {
 .rsvp-form button:disabled{
     opacity:0.7;
     cursor:not-allowed;
+}
+
+/* ===========================
+   Gift Details
+=========================== */
+.gift-details{
+    display:none;
+    margin-top:35px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+.gift-details.show{
+    display:grid;
+}
+.gift-card{
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    text-align:left;
+    opacity:0;
+    transform:translateY(25px);
+}
+.gift-details.show .card-1{
+    animation:giftReveal .45s ease forwards;
+}
+.gift-details.show .card-2{
+    animation:giftReveal .45s ease forwards;
+    animation-delay:.15s;
+}
+.gift-card h3{  
+    color:#C9A227;
+    margin-bottom:20px;
+}
+.copy-btn{
+    margin-left:12px;
+    padding:8px 14px;
+    border:none;
+    border-radius:8px;
+    background:#C9A227;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+.copy-btn:hover{
+    background:#b8921d;
+}
+.copy-btn:disabled{
+    background:#2E8B57;
+    cursor:default;
+}
+.copy-message{
+    margin-top:16px;
+    color:#2E8B57;
+    font-weight:600;
+    opacity:0;
+    transform:translateY(-5px);
+    transition:opacity .3s ease, transform .3s ease;
+    min-height:22px;
+}
+.copy-message.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes giftReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }

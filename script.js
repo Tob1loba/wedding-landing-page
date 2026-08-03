@@ -146,6 +146,84 @@ rsvpForm.addEventListener("submit", async (e) => {
     }
 });
 
+// ==========================
+// Gift Registry
+// ==========================
+const giftToggle = document.getElementById("gift-toggle");
+const giftDetails = document.querySelector(".gift-details");
+const giftButtonText = document.querySelector(".gift-text-btn");
+
+giftToggle.addEventListener("click", () => {
+    giftDetails.classList.toggle("show");
+    giftToggle.classList.toggle("active");
+    
+    if(giftDetails.classList.contains("show")){
+
+        giftButtonText.textContent = "Hide Gift Details";
+
+    }else{
+
+        giftButtonText.textContent = "View Gift Details";
+
+    }
+
+});
+
+// ==========================
+// Copy Account Number
+// ==========================
+const copyButtons = document.querySelectorAll(".copy-btn");
+
+copyButtons.forEach(button => {
+
+    button.addEventListener("click", async () => {
+
+        const accountNumber =
+            button.previousElementSibling.textContent.trim();
+
+        try{
+
+            await navigator.clipboard.writeText(accountNumber);
+
+            const card = button.closest(".gift-card");
+            const message = card.querySelector(".copy-message");
+            const title = card.querySelector("h3").textContent;
+
+            if(title.includes("Nigerian")){
+
+                message.textContent = "✅ Nigerian account number copied!";
+
+            }else{
+
+                message.textContent = "✅ AUD account number copied!";
+
+            }
+
+            message.classList.add("show");
+
+            button.textContent = "✅ Copied";
+            button.disabled = true;
+
+            setTimeout(() =>{
+
+                message.classList.remove("show");
+
+                button.textContent = "📋 Copy";
+                button.disabled = false;
+
+            },2000);
+
+        }catch(error){
+
+            console.error(error);
+
+        }
+
+    });
+
+
+});
+
 updateCountdown(); // Initial call to display the countdown immediately
 
 setInterval(updateCountdown, 1000);
