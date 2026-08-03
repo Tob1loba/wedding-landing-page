@@ -1,3 +1,6 @@
+// =================================
+// COUNTDOWN
+// =================================
 const weddingDate = new Date("December 5, 2026 16:00:00").getTime();
 
 function updateCountdown() {
@@ -14,7 +17,16 @@ function updateCountdown() {
     document.getElementById("minutes").textContent = minutes;
     document.getElementById("seconds").textContent = seconds;
 }
+    
+    // Initial countdown
+    updateCountdown(); // Initial call to display the countdown immediately
+    
+    // Update every second
+    setInterval(updateCountdown, 1000);
 
+// =================================
+// NAVIGATION
+// =================================
 const sections = document.querySelectorAll("section");
 const navlinks = document.querySelectorAll(".nav-link");
 window.addEventListener("scroll", () => {
@@ -39,6 +51,10 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+// =================================
+// SCROLL ANIMATIONS
+// =================================
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -58,7 +74,7 @@ sections.forEach((section, index) => {
 });
 
 // ==========================
-// Gallery Lightbox
+// GALLERY LIGHTBOX
 // ==========================
 
 const galleryImages = document.querySelectorAll(".gallery-grid img");
@@ -87,7 +103,7 @@ lightbox.addEventListener("click", e => {
 });
 
 // ===============================
-// FAQ Accordion
+// FAQ ACCORDION
 // ===============================
 
 const faqQuestions = document.querySelectorAll(".faq-question");
@@ -108,7 +124,7 @@ faqQuestions.forEach(question => {
 });
 
 // ===============================
-// RSVP Form Submission
+// RSVP 
 // ===============================
 
 const rsvpForm = document.querySelector(".rsvp-form");
@@ -147,7 +163,7 @@ rsvpForm.addEventListener("submit", async (e) => {
 });
 
 // ==========================
-// Gift Registry
+// GIFT REGISTRY
 // ==========================
 const giftToggle = document.getElementById("gift-toggle");
 const giftDetails = document.querySelector(".gift-details");
@@ -170,7 +186,7 @@ giftToggle.addEventListener("click", () => {
 });
 
 // ==========================
-// Copy Account Number
+// COPY ACCOUNT NUMBER
 // ==========================
 const copyButtons = document.querySelectorAll(".copy-btn");
 
@@ -223,7 +239,3 @@ copyButtons.forEach(button => {
 
 
 });
-
-updateCountdown(); // Initial call to display the countdown immediately
-
-setInterval(updateCountdown, 1000);

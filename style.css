@@ -1,3 +1,6 @@
+/* =================================
+   RESET
+==================================== */
 html {
     scroll-behavior: smooth;
 }
@@ -7,6 +10,9 @@ padding: 0;
 box-sizing: border-box;
 }
 
+/* =================================
+   GLOBAL STYLES
+==================================== */
 body {
     font-family: Georgia, serif;
     scroll-behavior: smooth;
@@ -14,24 +20,54 @@ body {
 section {
     scroll-margin: 140px;
 }
+.section-title {
+    color: #2E2E2E;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 
+            opacity 0.8s ease,
+            transform 0.8s ease;
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =================================
+   HEADER
+==================================== */
 header {
     background-color: #ffffff;
-    padding: 30px 0;
-    text-align: center;
     border-bottom: 1px solid #eeeeee;
+    padding: 30px 0;
     position: sticky;
+    text-align: center;
     top: 0;
     z-index: 1000;
+}
+.header-content {
+    padding: 20px;
 }
 .couple-names {
     font-family: "Cormorant Garamond", serif;
     font-size: 2.5rem;
     margin-bottom: 15px;
 }
+.main-nav {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
 .nav-link {
-    text-decoration: none;
     color: #333333;
     font-size: 0.95rem;
+    text-decoration: none;
 }
 .nav-link:hover {
     color: #b8860b;
@@ -40,180 +76,185 @@ header {
     color: #b8860b;
     font-weight: bold;
 }
-.main-nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-.header-content {
-    padding: 20px;
-}
+
+/* =================================
+   HERO
+==================================== */
 .hero {
-    text-align: center;
     padding: 80px 10px;
+    text-align: center;
 }
 .hero-image img {
-    width: 100%;
-    max-width: 700px;
     border-radius: 12px;
     display: block;
     margin: 0 auto 40px;
+    max-width: 700px;
+    width: 100%;
 }
 .hero-initials {
+    color: #222;
     font-family: "Cormorant Garamond", serif;
     font-size: 4.5rem;
     font-weight: 500;
     margin-bottom: 10px;
-    color: #222;
 }
 .hero-date {
+    color: #777;
     font-size: 1rem;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #777;
     margin-bottom: 18px;
+    text-transform: uppercase;
 }
 .hero-message {
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.8;
     color: #555;
     font-size: 1rem;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 600px;
 }
+
+/* =================================
+   OUR STORY
+==================================== */
 .our-story {
-    padding: 120px 10px;
     background: #fffdf8;
+    padding: 120px 10px;
 }
 .story-container {
-    max-width: 850px;
     margin: 0 auto;
+    max-width: 850px;
     text-align: center;
 }
-.section-title {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 3rem;
-    font-weight: 500;
-    color: #2E2E2E;
-    margin-bottom: 12px;
-}
 .story-text {
+    color: #6B6B6B;
     font-size: 1.1rem;
     line-height: 2;
-    color: #6B6B6B;
-}
-.meet-the-couple {
-    padding: 120px 10%;
 }
 .title-divider {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
     gap: 18px;
+    justify-content: center;
     margin: 0 0 35px;
 }
-.meet-the-couple .title-divider {
-    margin-top: -25px;
-}
-.wedding-details .title-divider {
-    margin-top: 20px;
-}
 .title-divider span:first-child,
-.title-divider span:last-child{
-    width: 60px;
-    height: 2px;
+.title-divider span:last-child {
     background: #D8A48F;
+    height: 2px;
+    width: 60px;
 }
 .heart {
     color: #D8A48F;
     font-size: 1.2rem;
 }
+
+/* =================================
+   MEET THE COUPLE
+==================================== */
+.meet-the-couple {
+    padding: 120px 10%;
+}
+.meet-container {
+    margin: 0 auto;
+    max-width: 1100px;
+}
+.meet-container .section-title {
+    margin-bottom: 35px;
+    text-align: center;
+}
+.meet-the-couple .title-divider {
+    margin-top: -25px;
+}
 .couple-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 60px;
-    max-width: 1100px;
+    grid-template-columns: repeat(2, 1fr);
     margin: 0 auto;
+    max-width: 1100px;
 }
 .person-card {
     text-align: center;
 }
 .person-card img {
-    width: 230px;
-    height: 300px;
-    object-fit: cover;
     border-radius: 12px;
-    margin-bottom: 25px
+    height: 300px;
+    margin-bottom: 25px;
+    object-fit: cover;
+    width: 230px;
 }
 .person-card h3 {
     font-family: "Cormorant Garamond", serif;
     font-size: 2rem;
     margin-bottom: 25px;
 }
-.name-divider {
-    width: 40px;
-    height: 2px;
-    background: #D8A48F;
-    margin: 0 0 18px;
-}
 .person-card p {
-    line-height: 1.8;
     color: #666;
+    line-height: 1.8;
 }
-.meet-container {
-    max-width: 1100px;
-    margin: 0 auto;
+.name-divider {
+    background: #D8A48F;
+    height: 2px;
+    margin: 0 0 18px;
+    width: 40px;
 }
-.meet-container .section-title {
-    text-align: center;
-    margin-bottom: 35px;
-}
+
+/* =================================
+   WEDDING DETAILS
+==================================== */
 .wedding-details {
-    padding: 120px 10px;
     background: #fffdf8;
+    padding: 120px 10px;
     text-align: center;
+}
+.wedding-details .title-divider {
+    margin-top: 20px;
 }
 .details-container {
-    max-width: 1100px;
     margin: 0 auto;
+    max-width: 1100px;
 }
 .details-container .section-title {
-    text-align: center;
     margin-bottom: 60px;
+    text-align: center;
 }
 .details-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 60px;
 }
 .detail-card {
     background: #fff;
-    padding: 40px 30px;
     border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    padding: 40px 30px;
     text-align: center;
-    box-shadow: 0 10px 35px rgba(0,0,0,.08);
     transition: 3s;
 }
 .detail-card:hover {
-    transform: translateY(-8px);
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
-}
-.detail-card h3 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 2rem;
-    font-weight: 500;
-    color: #2E2E2E;
-    margin-bottom: 18px;
-}
-.detail-card p {
-    color: #6B6B6B;
-    line-height: 1.8;
-    font-size: 1rem;
+    transform: translateY(-8px);
 }
 .detail-icon {
     font-size: 2rem;
     margin-bottom: 15px;
 }
+.detail-card h3 {
+    color: #2E2E2E;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+.detail-card p {
+    color: #6B6B6B;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* =================================
+   COUNTDOWN
+==================================== */
 .countdown {
     padding: 120px 10px;
     text-align: center;
@@ -221,45 +262,49 @@ header {
 .countdown-subtitle {
     color: #B8895A;
     letter-spacing: 2px;
-    text-transform: uppercase;
     margin-bottom: 60px;
+    text-transform: uppercase;
 }
 .countdown-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    max-width: 900px;
+    grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
+    max-width: 900px;
 }
 .countdown-box {
     background: #ffffff;
-    padding: 40px;
     border-radius: 18px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 40px;
 }
 .countdown-box span {
+    color: #2E2E2E;
     display: block;
     font-family: "Cormorant Garamond", serif;
     font-size: 3.5rem;
-    color: #2E2E2E;
 }
 .countdown-box p {
     color: #777;
     margin-top: 10px;
 }
+
+/* =================================
+   RSVP
+==================================== */
 .rsvp {
-    padding: 120px 10px;
     background: #fffdf8;
+    padding: 120px 10px;
 }
 .rsvp-container {
-    max-width: 700px;
     margin: 0 auto;
+    max-width: 700px;
     text-align: center;
 }
 .rsvp-subtitle {
     color: #B8895A;
-    margin-bottom: 50px;
     line-height: 1.8;
+    margin-bottom: 50px;
 }
 .rsvp-form {
     display: flex;
@@ -269,39 +314,43 @@ header {
 .rsvp-form input,
 .rsvp-form select,
 .rsvp-form textarea {
-    padding: 18px;
+    background: white;
     border: 1px solid #E8E3DB;
     border-radius: 10px;
     font-size: 1rem;
     font-family: inherit;
-    background: white;
+    padding: 18px;
 }
 .rsvp-form input:focus,
 .rsvp-form select:focus,
 .rsvp-form textarea:focus {
-    outline: none;
     border-color: #D8A48F;
+    outline: none;
 }
 .rsvp-form button {
     background: #D8A48F;
-    color: white;
     border: none;
-    padding: 18px;
     border-radius: 10px;
-    font-size: 1rem;
+    color: white;
     cursor: pointer;
-    transition: all .3s ease;
+    font-size: 1rem;
+    padding: 18px;
+    transition: all 0.3s ease;
 }
 .rsvp-form button:hover {
     background: #C8917A;
 }
+
+/* =================================
+   GALLERY
+==================================== */
 .gallery {
-    padding: 120px 10px;
     background: #FAF7F2;
+    padding: 120px 10px;
 }
 .gallery-container {
-    max-width: 1200px;
     margin: 0 auto;
+    max-width: 1200px;
     text-align: center;
 }
 .gallery-subtitle {
@@ -310,29 +359,33 @@ header {
 }
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
 }
 .gallery-grid img {
-    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
     height: 350px;
     object-fit: cover;
-    border-radius: 18px;
-    cursor: pointer;
-    transition: transform .35s ease, box-shadow .35s ease;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, .08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    width: 100%;
 }
 .gallery-grid img:hover {
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, .15);
 }
+
+/* =================================
+   WEDDING SCHEDULE
+==================================== */
 .schedule {
-    padding: 120px 10px;
     background: #fff;
+    padding: 120px 10px;
 }
 .schedule-container {
-    max-width: 900px;
     margin: 0 auto;
+    max-width: 900px;
     text-align: center;
 }
 .timeline {
@@ -341,25 +394,25 @@ header {
     gap: 30px;
 }
 .timeline-item {
-    display: flex;
     align-items: flex-start;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
     gap: 30px;
     padding: 30px;
-    background: #fff;;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
-    transition: .3s ease;
+    transition: 0.3s ease;
 }
 .timeline-item:hover {
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
     transform: translateY(-8px);
-    box-shadow: 0 18px 45px rgba(0, 0, 0, .12);
 }
 .time {
-    min-width:110px;
+    color: #D8A48F;
     font-family: "Cormorant Garamond", serif;
     font-size: 2rem;
     font-weight: 600;
-    color: #D8A48F;
+    min-width:110px;
 }
 .event {
     text-align: left;
@@ -373,133 +426,295 @@ header {
     color: #666;
     line-height: 1.8;
 }
+
+/* =================================
+   GIFT REGISTRY
+==================================== */
 .gift {
-    padding: 120px 10px;
     background: #FAF7F2;
+    padding: 120px 10px;
 }
 .gift-container {
-    max-width: 750px;
-    margin: 0 auto;
-    text-align: center;
     background: #fff;
-    padding: 60px 40px;
     border-radius: 24px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 60px 40px;
+    text-align: center;
 }
 .gift-text {
     color: #666;
-    line-height: 2;   
+    line-height: 2; 
     margin: 30px auto 45px;
-    max-width: 550px;
+    max-width: 550px;  
 }
 .gift-button {
-    background: #D8A48F;
-    color: #fff;
-    border: none;
-    padding: 18px 40px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: .3s ease;
-    font-size: 1rem;
-    display:inline-flex;
     align-items:center;
-    gap:10px;
+    background: #D8A48F;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    display:inline-flex;
+    font-size: 1rem;
+    gap: 10px;
+    padding: 18px 40px;
+    transition: 0.3s ease;
 }
 .gift-button:hover {
     background: #C8917A;
+    box-shadow: 0 12px 30px rgba(216, 164, 143, 0.35);
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(216, 164, 143, .35);
 }
-.gift-arrow{
-    transition:transform .35s ease;
+.gift-arrow {
+    transition:transform 0.35s ease;
 }
-.gift-button.active .gift-arrow{
+.gift-button.active .gift-arrow {
     transform:rotate(180deg);
 }
+
+/* =================================
+   FAQ
+==================================== */
 .faq {
-    padding: 120px 10px;
     background: white;
+    padding: 120px 10px;
 }
 .faq-container {
-    max-width: 800px;
     margin: 0 auto;
+    max-width: 800px;
 }
 .faq-item {
     background: #fff;
-    padding: 30px;
     border-radius: 18px;
-    margin-bottom: 25px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
-    transition: .3s ease;
+    margin-bottom: 25px;
+    padding: 30px;
+    transition: 0.3s ease;
 }
 .faq-item:hover {
-    transform: translateY(-6px);
     box-shadow: 0 18px 40px rgba(0, 0, 0, .12);
+    transform: translateY(-6px);
 }
 .faq-item h3 {
+    color: #D8A48F;
     font-family: "Cormorant Garamond", serif;
     font-size: 1.8rem;
-    color: #D8A48F;
     margin-bottom: 15px;
 }
 .faq-item p {
     color: #666;
     line-height: 1.8;
 }
+
+/* =================================
+   CONTACT
+==================================== */
 .contact {
-    padding: 120px 10px;
     background: #FAF7F2;
+    padding: 120px 10px;
     text-align: center;
 }
 .contact-container {
-    max-width: 700px;
-    margin: auto;
     background: #fff;
-    padding: 60px 40px;
     border-radius: 24px;
     box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
+    margin: auto;
+    max-width: 700px;
+    padding: 60px 40px;
     text-align: center;
 }
 .contact p {
-    margin-top: 18px;
     color: #666;
     font-size: 1.05rem;
     line-height: 2;
+    margin-top: 18px;
 }
+
+/* =================================
+   FOOTER
+==================================== */
 footer {
     background: #1F1F1F;
     color: #F5F5F5;
-    text-align: center;
     padding: 50px 20px;
+    text-align: center;
 }
 footer p {
-    margin: 10px 0;
     color: #CCCCCC;
-    font-size: .95rem;
+    font-size: 0.95rem;
+    margin: 10px 0;
 }
-.hidden {
+
+/* =================================
+   LIGHTBOX
+==================================== */
+.lightbox {
+    align-items: center;
+    background: rgba(0, 0, 0, .9);
+    display: flex;
+    inset: 0;
+    justify-content: center;
     opacity: 0;
-    transform: translateY(60px);
-    transition: 
-            opacity .8s ease,
-            transform .8s ease;
+    position: fixed;
+    transition: 3s ease;
+    visibility: hidden;
+    z-index: 5000;
 }
-.show {
+.lightbox.show {
     opacity: 1;
-    transform: translateY(0);
+    visibility: visible;
 }
+.lightbox-image {
+    border-radius: 18px;
+    max-width: 90%;
+    max-height: 85%;
+}
+.close-lightbox {
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+    position: absolute;
+    right: 40px;
+    top: 30px;
+}
+
+/* =================================
+    FAQ Accordion Styles
+==================================== */
+.faq-question {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+.faq-icon {
+    color: #D8A48F;
+    font-size: 2rem;
+    transition: 0.3s ease;
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+.faq-item.active .faq-answer {
+    max-height: 500px; 
+}
+
+/* =================================
+    RSVP Success Message 
+==================================== */
+.success-message {
+    color: #2E8B57;
+    display: none;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 25px;
+}
+.success-message.show {
+    display: block;
+}
+.rsvp-form button:disabled {
+    cursor:not-allowed;
+    opacity: 0.7;
+}
+
+/* ===========================
+   Gift Details
+=========================== */
+.gift-details {
+    display:none;
+    gap: 25px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    margin-top: 35px;
+}
+.gift-details.show {
+    display:grid;
+}
+.gift-card {
+    background:#fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    opacity: 0;
+    padding: 30px;
+    text-align: left;
+    transform:translateY(25px);
+}
+.gift-details.show .card-1 {
+    animation:giftReveal 0.45s ease forwards;
+}
+.gift-details.show .card-2 {
+    animation: giftReveal 0.45s ease forwards;
+    animation-delay: 0.15s;
+}
+.gift-card h3 {  
+    color: #C9A227;
+    margin-bottom: 20px;
+}
+.copy-btn {
+    background:#C9A227;
+    border:none;
+    border-radius:8px;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+    margin-left:12px;
+    padding:8px 14px;
+    transition: 0.3s;
+}
+.copy-btn:hover {
+    background:#b8921d;
+}
+.copy-btn:disabled {
+    background:#2E8B57;
+    cursor:default;
+}
+.copy-message {
+    color:#2E8B57;
+    font-weight:600;
+    margin-top:16px;
+    min-height:22px;
+    opacity:0;
+    transform:translateY(-5px);
+    transition:opacity 0.3s ease, transform 0.3s ease;
+}
+.copy-message.show {
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes giftReveal {
+
+    from {
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+
 @media (max-width: 768px) {
     .header-content {
+        align-items: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 20px;
     }
     .main-nav {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         gap: 12px;
+        justify-content: center;
     }
     .hero h1 {
         font-size: 2.5rem;
@@ -508,7 +723,7 @@ footer p {
         font-size: 2rem;
     }
     .nav-link {
-        font-size: .9rem;
+        font-size: 0.9rem;
     }
     .nav-link {
         padding: 6px 8px;
@@ -528,8 +743,8 @@ footer p {
         line-height: 1.6;
     }
     .hero-image img {
-        max-width: 100%;
         margin-bottom: 25px;
+        max-width: 100%;
     }
     section {
         scroll-margin-top: 250px;
@@ -550,40 +765,40 @@ footer p {
         display: none;
     }
     .couple-grid {
-        grid-template-columns: 1fr;
         gap: 50px;
+        grid-template-columns: 1fr;
     }
     .person-card {
-        display: flex;
         align-items: center;
-        gap: 18px;
+        display: flex;
         background: #fff;
         border-radius: 22px;
-        padding: 18px;
         box-shadow: 0 12px 35px rgba(0,0,0,.08);
+        gap: 18px;
+        padding: 18px;
     }
     .person-card img {
-        width: 120px;
-        height: 160px;
-        flex-shrink: 0;
-        object-fit: cover;
         border-radius: 12px;
+        flex-shrink: 0;
+        height: 160px;
+        object-fit: cover;
+        width: 120px;
     }
     .person-card h3 {
-        margin-bottom: 6px;
         font-size: 2rem;
+        margin-bottom: 6px;
         text-align: left;
     }
     .person-card p {
-        font-size: .9rem;
-        line-height: 1.9;
         color: #666;
+        font-size: 0.9rem;
+        line-height: 1.9;
         margin-top: 12px;
         text-align: left;
     }
     .person-info {
-        flex: 1;
         display: flex;
+        flex: 1;
         flex-direction: column;
         justify-content: center;
         padding-left: 18px;
@@ -603,8 +818,8 @@ footer p {
     color: inherit;
 }
 .countdown-grid {
-    grid-template-columns:repeat(2,1fr);
     gap:18px;
+    grid-template-columns:repeat(2,1fr);
 }
 .countdown-box {
     padding: 25px 15px;
@@ -613,10 +828,10 @@ footer p {
     font-size: 2.5rem;
 }
 .countdown-box p {
-    font-size: .9rem;
+    font-size: 0.9rem;
 }
 .countdown-subtitle {
-    font-size: .8rem;
+    font-size: 0.8rem;
     letter-spacing: 1px;
     line-height: 1.5;
     padding: 0 10px;
@@ -625,8 +840,8 @@ footer p {
     padding: 80px 20px;
 }
 .gallery-grid {
-    grid-template-columns: 1fr;
     gap: 20px;
+    grid-template-columns: 1fr;
 }
 .gallery-grid img {
     height: 300px;
@@ -636,8 +851,8 @@ footer p {
     text-align: center;
 }
 .time {
-    min-width: auto;
     font-size: 2rem;
+    min-width: auto;
 }
 .event {
     text-align: center;
@@ -646,7 +861,7 @@ footer p {
     padding: 40px 25px;
 }
 .gift-text {
-    font-size:.95rem;
+    font-size: 0.95rem;
 }
 .faq-item {
     padding: 22px;
@@ -658,154 +873,11 @@ footer p {
     padding: 40px 25px;
 }
 .contact p {
-    font-size: .95rem;
+    font-size: 0.95rem;
 }
-}
-.lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, .9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: 3s ease;
-    z-index: 5000;
-}
-.lightbox.show {
-    opacity: 1;
-    visibility: visible;
-}
-.lightbox-image {
-    max-width: 90%;
-    max-height: 85%;
-    border-radius: 18px;
-}
-.close-lightbox {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: #fff;
-    font-size: 3rem;
-    cursor: pointer;
-}
-/* =================================
-    FAQ Accordion Styles
-==================================== */
-.faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-.faq-icon {
-    font-size: 2rem;
-    color: #D8A48F;
-    transition: 0.3s ease;
-}
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .35s ease;
-}
-.faq-item.active .faq-icon {
-    transform: rotate(45deg);
-}
-.faq-item.active .faq-answer {
-    max-height: 500px; 
-}
-/* =================================
-    RSVP Success Message 
-==================================== */
-.success-message {
-    display: none;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #2E8B57;
-    margin-top: 25px;
-}
-.success-message.show {
-    display: block;
-}
-.rsvp-form button:disabled{
-    opacity:0.7;
-    cursor:not-allowed;
 }
 
-/* ===========================
-   Gift Details
-=========================== */
-.gift-details{
-    display:none;
-    margin-top:35px;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
-.gift-details.show{
-    display:grid;
-}
-.gift-card{
-    background:#fff;
-    border-radius:18px;
-    padding:30px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    text-align:left;
-    opacity:0;
-    transform:translateY(25px);
-}
-.gift-details.show .card-1{
-    animation:giftReveal .45s ease forwards;
-}
-.gift-details.show .card-2{
-    animation:giftReveal .45s ease forwards;
-    animation-delay:.15s;
-}
-.gift-card h3{  
-    color:#C9A227;
-    margin-bottom:20px;
-}
-.copy-btn{
-    margin-left:12px;
-    padding:8px 14px;
-    border:none;
-    border-radius:8px;
-    background:#C9A227;
-    color:#fff;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-}
-.copy-btn:hover{
-    background:#b8921d;
-}
-.copy-btn:disabled{
-    background:#2E8B57;
-    cursor:default;
-}
-.copy-message{
-    margin-top:16px;
-    color:#2E8B57;
-    font-weight:600;
-    opacity:0;
-    transform:translateY(-5px);
-    transition:opacity .3s ease, transform .3s ease;
-    min-height:22px;
-}
-.copy-message.show{
-    opacity:1;
-    transform:translateY(0);
-}
 
-@keyframes giftReveal{
 
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+
