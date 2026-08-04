@@ -43,12 +43,15 @@ section {
    HEADER
 ==================================== */
 header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #eeeeee;
-    padding: 30px 0;
+    background: rgba(255, 252, 247, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(216, 164, 143, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    padding: 20px 40px;
     position: sticky;
     text-align: center;
     top: 0;
+    -webkit-backdrop-filter: blur(14px);
     z-index: 1000;
 }
 .header-content {
@@ -65,7 +68,7 @@ header {
     justify-content: center;
 }
 .nav-link {
-    color: #333333;
+    color: #5A4A42;
     font-size: 0.95rem;
     text-decoration: none;
 }
@@ -533,6 +536,68 @@ header {
 }
 
 /* =================================
+   DIRECTIONS
+==================================== */
+.directions {
+    background: #fff;
+    padding: 120px 10px;
+    text-align: center;
+}
+.directions-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+}
+.directions-text {
+    color: #6B6B6B;
+    line-height: 1.8;
+    margin: 0 auto 50px;
+    max-width: 600px;
+    text-align: center;
+}
+.location-card {
+    background: #FFFDF8;
+    border-radius: 24px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    padding: 50px 40px;
+    text-align: center;
+}
+.location-icon {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+.location-card h3 {
+    color: #2E2E2E;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.location-card p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+.map-button {
+    display: inline-block;
+    background: #D8A48F;
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: .3s ease;
+}
+.map-button:hover {
+    background: #C8917A;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(216, 164, 143, 0.35);
+}
+
+/* =================================
    FOOTER
 ==================================== */
 footer {
@@ -874,6 +939,22 @@ footer p {
 }
 .contact p {
     font-size: 0.95rem;
+}
+.directions {
+    padding: 80px 20px;
+}
+.location-card {
+    padding: 35px 25px;
+}
+.location-card h3 {
+    font-size: 1.7rem;
+}
+.location-icon {
+    font-size: 2.3rem;
+}
+.map-button {
+    padding: 16px;
+    width: 100%;
 }
 }
 
