@@ -84,13 +84,23 @@ header {
    HERO
 ==================================== */
 .hero {
-    padding: 80px 10px;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 80px 20px;
+    position: relative;
     text-align: center;
+    background: linear-gradient(
+        to bottom,
+        #fffefc,
+        #fffdf8
+    );
 }
-.hero-image img {
-    border-radius: 12px;
+.hero-image {
+    border: 12px solid #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(0,0,0,.10), 0 0 0 1px rgba(216,164,143,.35);
     display: block;
-    margin: 0 auto 40px;
+    margin: 0 auto 45px;
     max-width: 700px;
     width: 100%;
 }
@@ -114,6 +124,25 @@ header {
     line-height: 1.8;
     margin: 0 auto;
     max-width: 600px;
+}
+.hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* =================================
+   HERO FLORAL WATERMARK
+==================================== */
+
+.hero::before {
+    background: url("images/hero-floral-background.png") center center no-repeat;
+    background-size: 95%;
+    content: "";
+    inset: 0;
+    opacity: 0.15;
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
 }
 
 /* =================================
@@ -538,12 +567,12 @@ header {
 /* =================================
    DIRECTIONS
 ==================================== */
-.directions {
+.direction {
     background: #fff;
     padding: 120px 10px;
     text-align: center;
 }
-.directions-container {
+.direction-container {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -551,7 +580,7 @@ header {
     max-width: 800px;
     text-align: center;
 }
-.directions-text {
+.direction-text {
     color: #6B6B6B;
     line-height: 1.8;
     margin: 0 auto 50px;
@@ -807,9 +836,13 @@ footer p {
         font-size: 0.95rem;
         line-height: 1.6;
     }
-    .hero-image img {
+    .hero-image {
         margin-bottom: 25px;
         max-width: 100%;
+    }
+    .hero::before{
+    background-size: 150%;
+    opacity: 0.15;
     }
     section {
         scroll-margin-top: 250px;
@@ -955,6 +988,16 @@ footer p {
 .map-button {
     padding: 16px;
     width: 100%;
+}
+.photo-floral-top{
+    left: -20px;
+    top: -20px;
+    width: 90px;
+}
+.photo-floral-bottom{
+    bottom: -20px;
+    right: -20px;
+    width: 100px;
 }
 }
 
