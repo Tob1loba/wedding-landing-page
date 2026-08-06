@@ -79,6 +79,14 @@ header {
     color: #b8860b;
     font-weight: bold;
 }
+.menu-toggle{
+    background:none;
+    border:none;
+    color:#5A4A42;
+    cursor:pointer;
+    display:none;
+    font-size:2rem;
+}
 
 /* =================================
    HERO
@@ -98,7 +106,7 @@ header {
 .hero-image {
     border: 12px solid #fff;
     border-radius: 16px;
-    box-shadow: 0 20px 45px rgba(0,0,0,.10), 0 0 0 1px rgba(216,164,143,.35);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
     display: block;
     margin: 0 auto 45px;
     max-width: 700px;
@@ -798,18 +806,25 @@ footer p {
 
 
 @media (max-width: 768px) {
-    .header-content {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .main-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        justify-content: center;
-    }
+.header-content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+.menu-toggle {
+    display: block;
+}
+.main-nav {
+    display: none;
+    flex-direction:column;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+.main-nav.show{
+    display:flex;
+}
     .hero h1 {
         font-size: 2.5rem;
     }

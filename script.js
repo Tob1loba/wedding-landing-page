@@ -237,5 +237,23 @@ copyButtons.forEach(button => {
 
     });
 
+});
+
+/* ===========================
+   Mobile Navigation
+=========================== */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const mainNav = document.querySelector(".main-nav");
+
+menuToggle.addEventListener("click", () => {
+
+    mainNav.classList.toggle("show");
+
+    if (mainNav.classList.contains("show")) {
+        menuToggle.textContent = "✕";
+    } else {
+        menuToggle.textContent = "☰";
+    }
 
 });
