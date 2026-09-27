@@ -139,9 +139,10 @@ rsvpForm.addEventListener("submit", async (e) => {
 
     try {
         await fetch(
-            "https://script.google.com/macros/s/AKfycbyAj8cB3ta3No4lCP6_VPJhF-16KcJV5nlb7JMeyNsSGd7K5fj14PgDLSU4N9aygEIs/exec",
+            "https://script.google.com/macros/s/AKfycbx3YWoLF79Nc5iye0YEjcBSKYgwVu2wdyDOKeibMC3-ZL8I0JQvayjVYZBcoV0N-7c/exec",
             {
                 method: "POST",
+                mode: "no-cors",
                 body: formData
             }
         );
