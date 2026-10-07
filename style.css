@@ -852,8 +852,10 @@ footer p {
         line-height: 1.6;
     }
     .hero-image {
-        margin-bottom: 25px;
-        max-width: 100%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 0 auto 25px;
     }
     .hero::before{
     background-size: 150%;
@@ -957,7 +959,9 @@ footer p {
     grid-template-columns: 1fr;
 }
 .gallery-grid img {
-    height: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 .timeline-item {
     flex-direction: column;
